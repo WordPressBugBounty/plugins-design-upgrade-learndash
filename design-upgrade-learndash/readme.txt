@@ -1,18 +1,18 @@
 === Design Upgrade for LearnDash ===
 Contributors: escapecreative, davewarfel
-Donate link: https://www.paypal.me/escapecreative/10
 Tags: learndash, lms, learning management system, online courses, css
 Requires at least: 4.6
-Tested up to: 6.0
-Requires PHP: 5.6
+Tested up to: 7.1.4
+Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 2.12.1
 
-Instantly improve LearnDash's design -- focus mode, course content, profile page, course navigation & course grid -- to more closely match your WordPress theme, and improve LearnDash styles.
+Instantly improve LearnDash's design -- focus mode, course content, profile page, course navigation & course grid -- to more closely match your WordPress theme, and improve LearnDash styles. 
 
 == Description ==
 
-LearnDash is a powerful learning management system (LMS) for managing your online courses, but there are some areas where the design falls short. In order to provide your students with an exceptional learning experience, you need a professional design.
+LearnDash is a powerful learning management system (LMS) for managing your online courses, but there are some areas where the design falls short. In order to provide your students with an exceptional learning experience, you need a professional design. 
 
 ### Enter Design Upgrade for LearnDash
 
@@ -263,6 +263,10 @@ We designed this plugin to be flexible so that it takes on many of the character
 5. Simplified & cleaned up the `[ld_profile]` shortcode/block
 
 == Changelog ==
+
+= 2.12.1 - November 15, 2026 =
+
+- Updated plugin documentation & compatibility details
 
 = 2.12 - August 9, 2022 =
 

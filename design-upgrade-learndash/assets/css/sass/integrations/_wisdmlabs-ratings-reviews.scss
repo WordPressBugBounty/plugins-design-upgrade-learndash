@@ -1,0 +1,445 @@
+/**
+ * WisdmLabs Ratings, Reviews & Feedback Plugin Compatibility
+ * 
+ * CSS that helps style all frontend elements that this plugin
+ * adds to a LearnDash site.
+ */
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1.0 - Course Page
+ *    1.1 - Stars Under Title
+ * 2.0 - Rating Stars
+ * 3.0 - Rating Bars
+ * 4.0 - "Your Rating"
+ * 5.0 - Sort & Filter
+ */
+
+/**
+ * 1.0 - Course Page
+ */
+
+/**
+ * 1.1 - Stars Under Title
+ */
+
+// "(X)" - number of reviews
+body .ratings-after-title .rating-container.rating-sm + span,
+body .ratings-after-title .rating-container.rating-xs + span {
+	margin-left: 0.25em;
+	opacity: 0.7; // inherits color of theme's .entry-title
+	font-weight: normal;
+
+	.rtl & {
+		margin: 0 0.25em 0 0;
+	}
+}
+
+body .ratings-after-title .rating-container.rating-sm + span {
+	font-size: 18px;
+}
+
+
+/**
+ * 2.0 - Rating Stars
+ */
+.rating-container .rating-stars {
+	// @TODO: add Pro option for size of stars
+	// font-size: 120%;
+
+	.empty-stars {
+		color: var(--ldx-star-rating-color-empty);
+	}
+
+	.filled-stars {
+		color: var(--ldx-star-rating-color-filled);
+		-webkit-text-stroke: 0;
+		text-shadow: none;
+	}
+
+} // .rating-container .rating-stars
+
+div.rating-disabled .rating-stars {
+	cursor: default; // remove the "not-allowed" cursor
+}
+
+
+.course-reviews-section {
+
+	.review-top-section {
+		justify-content: center;
+	}
+
+	.review-top-section .review-top-col:nth-child(1) {
+		padding: 0 15px 0 0;
+
+		.rtl & {
+			padding: 0 0 0 15px;
+		}
+	}
+
+	.review-top-section .review-top-col:nth-child(2) {
+		min-width: unset;
+		padding: 25px 18px;
+		border-width: 2px;
+
+		@media only screen and (max-width: 1023px) {
+			padding: 18px;
+		}
+	}
+
+	.review-top-section .review-top-col:nth-child(3) {
+		margin: 0;
+		padding: 0 0 0 15px;
+
+		.rtl & {
+			padding: 0 15px 0 0;
+		}
+	}
+
+	@media only screen and (max-width: 1023px) {
+		.review-top-star-wrap {
+			border-width: 2px;
+		}
+	}
+
+
+	/**
+	 * 3.0 - Rating Bars
+	 */
+	.review-split-percent .review-split-percent-inner {
+		border-radius: var(--ldx-progress-bar-border-radius);
+	}
+	// Bar Background
+	.review-split-percent .review-split-percent-inner-1 {
+		background-color: rgba( $black, 0.08 );
+	}
+	// Bar Filled
+	.review-split-percent .review-split-percent-inner-2 {
+		background-color: var(--ldx-star-rating-color-filled);
+		box-shadow: 1px 0 0 0 $white;
+
+		.rtl & {
+			box-shadow: -1px 0 0 0 $white;
+		}
+	}
+
+	.review-split-wrap .review-split-count {
+		color: #777;
+	}
+
+	.reviews-total-wrap {
+		font-size: 1em;
+
+		@media only screen and (max-width: 1023px) {
+			color: inherit;
+		}
+	}
+
+	.reviews-total {
+		font-weight: normal;
+	}
+
+	/**
+	 * 4.0 - "Your Rating"
+	 */
+	// "Edit your Review" button (change to a text link)
+	.review-top-section .write-a-review.already-rated,
+	.write-review-wrap .write-a-review.already-rated {
+		text-transform: capitalize;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		border-radius: var(--ldx-global-border-radius);
+		box-shadow: none;
+		background: none;
+		color: var(--ldx-color-link);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--ldx-color-link-hover);
+			text-decoration: underline;
+		}
+	}
+
+	/**
+	 * 5.0 - Sort & Filter
+	 */
+	.filter-options {
+		margin: 2em 0 0;
+		padding: 2em 1em 1em;
+		background-color: rgba( $black, 0.04 );
+		border-radius: var(--ldx-global-border-radius);
+	}
+
+	.filter-options .select-text:focus ~ .select-label,
+	.filter-options .select-text:valid ~ .select-label {
+		color: #666;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.filter-options select.select-text {
+		font-size: 1em;
+	}
+
+	.filter-options span.select-bar::before,
+	.filter-options span.select-bar::after {
+		background-color: var(--ldx-color-link-hover);
+	}
+
+	.filter-options .select {
+		@media only screen and (max-width: 1023px) {
+			margin-bottom: 0;
+		}
+	}
+
+
+	/**
+	 * 6.0 - Review Section
+	 */
+	.wdm_course_rating_reviews {
+		padding: 0;
+		margin-top: 2em;
+	}
+	
+	// Review Header Info
+	.review-head {
+		margin-bottom: 0.5em;
+	}
+
+	// Name
+	strong.review-author-name {
+		font-size: 14px;
+	}
+
+	// Posted on
+	span.wdm-review-age {
+		margin-left: auto;
+		font-size: 13px;
+		color: #777;
+
+		.rtl & {
+			margin: 0 auto 0 0;
+		}
+	}
+
+	// Review Content Container
+	.review-body {
+		font-size: 1em;
+		line-height: 1.65;
+	}
+
+	// Review Title
+	strong.review-title {
+		margin: 0;
+		font-size: 115%;
+		line-height: 1.65;
+	}
+
+	// Review Content
+	p.review-desc {
+		line-height: 1.65;
+	}
+
+	// Review Footer
+	.review-footer {
+		margin-top: 0.5em;
+	}
+
+	// Helpful Text
+	span.review-helpful-text {
+		font-size: 13px;
+		font-weight: normal;
+		color: #777;
+		padding-left: 0;
+
+		.rtl & {
+			padding: 0 0 0 8px;
+		}
+	}
+
+	// Reply Arrow
+	a.reply_to_review_link {
+		color: var(--ldx-color-link);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--ldx-color-link-hover);
+		}
+	}
+
+} // .course-reviews-section
+
+// MODAL
+.rrf-modal-content.modal, // reviews
+.wdm_feedback_form.modal { // feedback
+	-webkit-border-radius: var(--ldx-global-border-radius);
+	-moz-border-radius: var(--ldx-global-border-radius);
+	-o-border-radius: var(--ldx-global-border-radius);
+	-ms-border-radius: var(--ldx-global-border-radius);
+	border-radius: var(--ldx-global-border-radius);
+
+	.prompt-text {
+		font-size: 120%;
+	}
+
+	.wdm_rrf_remaining_characters {
+		padding: 0 3px;
+		font-size: 90%;
+		text-align: left;
+		opacity: 0.7;
+	}
+
+	p.wdm_rrf_feedback_notice_msg {
+		font-size: 90%;
+		line-height: 1.3;
+
+		a {
+			color: var(--ldx-color-link);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: var(--ldx-color-link-hover);
+			}
+		}
+	} // p.wdm_rrf_feedback_notice_msg
+
+} // .modal
+
+.wdm_feedback_form.modal .wdm_rrf_remaining_characters {
+	margin-bottom: 0.75em;
+}
+
+
+/**
+ * Reviews Popup (on hover)
+ */
+.wdm-crr-show-popup .rating-container .wdm-popup-div {
+	border-radius: var(--ldx-global-border-radius);
+	border-color: #e0e0e0;
+	box-shadow: 0 1px 4px rgba( $black, 0.05 ),
+							0 4px 14px rgba( $black, 0.08 );
+
+	&::before {
+		border-width: 10px;
+		margin-left: -21px;
+		border-bottom-color: #e0e0e0;
+	}
+
+	// 3 out of 5 stars
+	.wdm_crr_rate_out_of {
+		font-weight: 500;
+	}
+
+	// "See all reviews (X)"
+	.wdm_crr_review_link > a,
+	// 5 star, 4 star, 3 star, etc.
+	.review_star_filter_link {
+		color: var(--ldx-color-link);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--ldx-color-link-hover);
+			text-decoration: underline;
+		}
+	}
+
+} // .wdm-popup-div
+
+.wdm-crr-show-popup .wdm-popup-div .wdm-popup-div-content {
+	padding: 0.75em 1em;
+	font-size: inherit;
+	line-height: 1.2;
+	color: inherit;
+} // .wdm-popup-div-content
+
+/**
+ * Bar Chart
+ */
+.barChart {
+
+	.barChart__bar {
+		height: 17px;
+		border-radius: 1px;
+		background-color: #f3f3f3;
+		background: linear-gradient(to bottom, #eee, #f6f6f6);
+		// box-shadow: inset 0 0 0 1px rgba( $black, 0.09 ),
+		// 						inset 0 3px 4px rgba( $black, 0.06 );
+		box-shadow: inset 0 1px 2px rgba( $black, 0.4 ),
+								inset 0 0 0 1px rgba( $black, 0.1 );
+	}
+
+	.barChart__barFill {
+		background: var(--ldx-star-rating-color-filled);
+		box-shadow: inset 0 0 0 1px rgba( $black, 0.16 ),
+								inset 0 -5px 7px rgba( $black, 0.05 );
+	}
+
+} // .barChart
+
+
+
+/**
+ * "Your Reviews" Page
+ *
+ * .course_rating_review_page
+ */
+.course_rating_review_page {
+
+	// Reviews Container
+	// .wdm_courses_reviews {
+	// }
+
+	// Each Individual Review Box
+	.wdm_courses_reviews > div {
+		border: 0;
+		border-radius: var(--ldx-global-border-radius);
+		background-color: rgba( $black, 0.04 );
+		margin-bottom: 1em;
+		padding: 1.25em;
+	}
+
+	// Image Container
+	.wdm_course_feature_img.wdm_crr_left_section {
+		padding: 0;
+		margin-right: 3%;
+	}
+
+	// Thumbnail Image <img>
+	.wdm_course_thumb {
+		height: auto;
+		box-shadow: none;
+		border-radius: calc(var(--ldx-global-border-radius) * 0.75);
+	}
+
+	// Right Side Content
+	.wdm_rating_section.wdm_crr_right_section {
+		padding-top: 0;
+	}
+
+	// Course Title
+	.wdm_rating_section.wdm_crr_right_section > a {
+		font-size: 1.375em;
+		font-weight: 500;
+		color: var(--ldx-color-link);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--ldx-color-link-hover);
+			text-decoration: underline;
+		}
+	}
+
+	// "5 Stars" Caption
+	.rating-container .caption {
+		color: #666;
+	}
+
+} // .course_rating_review_page
